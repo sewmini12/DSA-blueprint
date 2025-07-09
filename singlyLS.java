@@ -50,6 +50,22 @@ public static void insertEnd(int data){
     }
 
 }
+//insert data for certain position.position is count from the baginning.
+public static void insertPosAtBeg(int data,int position){
+Node newNode=new Node(data);
+newNode.data=data;
+newNode.next=null;
+
+Node temp=head;
+for(int i=0;i<position-1;i++){
+    temp=temp.next;
+
+}
+newNode.next=temp.next;
+temp.next=null;
+temp.next=newNode;
+
+}
 
 
 public static void main(String[] args){
@@ -61,7 +77,9 @@ insertEnd(4);
 insertEnd(3);
 insertEnd(6);
 insertEnd(9);
-
+insertPosAtBeg(56,1);
+insertPosAtBeg(21,4);
+insertPosAtBeg(11,5);
 
 
 Node currentNode=head;    
