@@ -55,7 +55,10 @@ public static void insertPosAtBeg(int data,int position){
 Node newNode=new Node(data);
 newNode.data=data;
 newNode.next=null;
-
+if(head==null){
+newNode=head;
+}
+else{
 Node temp=head;
 for(int i=0;i<position-1;i++){
     temp=temp.next;
@@ -64,13 +67,17 @@ for(int i=0;i<position-1;i++){
 newNode.next=temp.next;
 temp.next=null;
 temp.next=newNode;
-
+}
 }
 public static void insertPosiEnd(int data,int position){
 Node newNode=new Node(data);
 newNode.data=data;
 newNode.next=null;
 
+if(head==null){
+newNode=head;
+}
+else{
 Node prev=head;
 Node past=head;
 for(int i=0;i<position-1;i++){
@@ -84,9 +91,38 @@ newNode.next=past.next;
 past.next=null;
 past.next=newNode;
 
-
+}
 
 }
+
+public static void deleteFront(){
+if(head==null){
+    System.out.println("nothing to delete");
+}
+else{
+    head=head.next;
+
+}
+
+}
+
+public static void deleteEnd(){
+    if(head==null){
+        System.out.println("nothing to delete");
+    }
+    else{
+        Node temp=head;
+        while(temp.next.next!=null){
+            temp=temp.next;
+        }
+       temp.next=null;
+
+    }
+}
+
+
+
+
 
 
 
@@ -105,6 +141,9 @@ insertPosAtBeg(11,5);
 insertPosiEnd(22,5);
 insertPosiEnd(32,4);
 insertPosiEnd(33,1);
+deleteFront();
+deleteEnd();
+deleteEnd();
 
 Node currentNode=head;    
 while(currentNode!=null){
@@ -117,3 +156,4 @@ while(currentNode!=null){
 
 
 }
+/*easily can do these by import LinkedList class and use inbuilt methods */
