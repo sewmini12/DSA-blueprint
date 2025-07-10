@@ -135,9 +135,29 @@ public static void deletePosFront(int position){
     }
 }
 
+public static void deletePosEnd(int position){
+    if(head==null){
+        System.out.println("nothing to delete");
+    }
+    else{
+        Node prev=head;
+        Node past=head;
+        for(int i=0;i<position-1;i++){
+            prev=prev.next;
+        }
+        if(prev.next==null){
+            head=head.next;
+        }
+
+        while(prev.next!=null){
+            prev=prev.next;
+            past=past.next;
+        }
+        past.next=past.next.next;
 
 
-
+    }
+}
 
 
 public static void main(String[] args){
@@ -161,6 +181,8 @@ deleteEnd();
 deletePosFront(3);
 deletePosFront(2);
 deletePosFront(5);
+deletePosEnd(2);
+deletePosEnd(3);
 
 Node currentNode=head;    
 while(currentNode!=null){
