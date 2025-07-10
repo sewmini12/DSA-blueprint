@@ -66,6 +66,28 @@ temp.next=null;
 temp.next=newNode;
 
 }
+public static void insertPosiEnd(int data,int position){
+Node newNode=new Node(data);
+newNode.data=data;
+newNode.next=null;
+
+Node prev=head;
+Node past=head;
+for(int i=0;i<position-1;i++){
+    prev=prev.next;
+}
+while(prev.next!=null){
+    prev=prev.next;
+    past=past.next;
+}
+newNode.next=past.next;
+past.next=null;
+past.next=newNode;
+
+
+
+}
+
 
 
 public static void main(String[] args){
@@ -80,7 +102,9 @@ insertEnd(9);
 insertPosAtBeg(56,1);
 insertPosAtBeg(21,4);
 insertPosAtBeg(11,5);
-
+insertPosiEnd(22,5);
+insertPosiEnd(32,4);
+insertPosiEnd(33,1);
 
 Node currentNode=head;    
 while(currentNode!=null){
