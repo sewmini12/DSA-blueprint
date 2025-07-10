@@ -120,6 +120,20 @@ public static void deleteEnd(){
     }
 }
 
+public static void deletePosFront(int position){
+    if(head==null){
+        System.out.println("nothing to delete");
+
+    }
+    else{
+        Node temp=head;
+        for(int i=0;i<position-1;i++){
+           temp=temp.next;
+        }
+        temp.next=temp.next.next;
+
+    }
+}
 
 
 
@@ -144,6 +158,9 @@ insertPosiEnd(33,1);
 deleteFront();
 deleteEnd();
 deleteEnd();
+deletePosFront(3);
+deletePosFront(2);
+deletePosFront(5);
 
 Node currentNode=head;    
 while(currentNode!=null){
