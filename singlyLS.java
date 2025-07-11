@@ -142,7 +142,7 @@ public static void deletePosEnd(int position){
     else{
         Node prev=head;
         Node past=head;
-        for(int i=0;i<position-1;i++){
+        for(int i=0;i<position;i++){
             prev=prev.next;
         }
         if(prev.next==null){
