@@ -30,11 +30,34 @@ public static void insertBeg(int data){
 }
 
 }
+public static void insertEnd(int data){
+    Node newNode=new Node(data);
+    newNode.data=data;
+    newNode.next=null;
+    newNode.prev=null;
+
+    if(head==null){
+         head=newNode;
+         tail=newNode;
+    }
+    else{
+        tail.next=newNode;
+        newNode.prev=tail;
+        tail=newNode;
+    }
+}
+
+
+
+
 
 public static void main(String[]args){
 insertBeg(34);
 insertBeg(7);
 insertBeg(87);
+insertEnd(34);
+insertEnd(21);
+insertEnd(11);
 
 
 Node temp=head;
