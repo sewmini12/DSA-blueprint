@@ -13,7 +13,6 @@ import java.util.LinkedList;
  * 
  */
 
-
  //can't add top level class inside another class ex-can't Main class add inside anonther one.
 
     public class Main{
