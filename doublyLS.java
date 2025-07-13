@@ -94,10 +94,30 @@ public static void insertPosEnd(int data,int position){
 
          }
 
-
-
-
 }
+public static void deleteFront(){
+        if(head==null){
+           System.out.println("nothinfg to delete");
+        }
+        else{
+           Node temp=head;
+           head=head.next;
+           head.prev=null;
+           temp.next=null;
+        }
+}
+public static void deleteEnd(){
+        if(head==null){
+           System.out.println("nothinfg to delete");
+        }
+        else{
+           Node temp=tail;
+           tail=tail.prev;
+           temp.prev=null;
+           tail.next=null;
+        }
+}
+
 
 
 
@@ -112,6 +132,10 @@ insertposfront(2,22);
 insertposfront(5,11);
 insertPosEnd(56,4);
 insertPosEnd(90,3);
+deleteFront();
+deleteFront();
+deleteEnd();
+deleteEnd();
 
 
 Node temp=head;
