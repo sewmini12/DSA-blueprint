@@ -117,9 +117,32 @@ public static void deleteEnd(){
            tail.next=null;
         }
 }
-
-
-
+public static void deletePosFront(int position){
+        if(head==null){
+           System.out.println("nothinfg to delete");
+        }
+        else{
+            Node temp=head;
+           for(int i=0;i<position-1;i++){
+              temp=temp.next;
+           }
+           temp.prev.next=temp.next;
+           temp.next.prev=temp.prev;
+        }
+}
+public static void deletePosEnd(int position){
+     if(head==null){
+           System.out.println("nothinfg to delete");
+        }
+        else{
+            Node temp=tail;
+           for(int i=0;i<position-1;i++){
+              temp=temp.prev;
+           }
+           temp.next.prev=temp.prev;
+           temp.prev.next=temp.next;
+        }
+}
 
 public static void main(String[]args){
 insertBeg(34);
@@ -136,6 +159,8 @@ deleteFront();
 deleteFront();
 deleteEnd();
 deleteEnd();
+deletePosFront(2);
+deletePosEnd(3);
 
 
 Node temp=head;
