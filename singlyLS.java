@@ -60,7 +60,7 @@ newNode=head;
 }
 else{
 Node temp=head;
-for(int i=0;i<position-1;i++){
+for(int i=0;i<position-2;i++){
     temp=temp.next;
 
 }

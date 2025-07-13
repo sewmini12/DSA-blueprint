@@ -46,8 +46,58 @@ public static void insertEnd(int data){
         tail=newNode;
     }
 }
+//position is count from the front
+public static void insertposfront(int position,int data){
+        Node newNode=new Node(data);
+    newNode.data=data;
+    newNode.next=null;
+    newNode.prev=null;
+
+    if(head==null){
+         head=newNode;
+         tail=newNode;
+    }
+    else{
+        Node temp=head;
+        for(int i=0;i<position-2;i++){
+             temp=temp.next;
+         }
+         newNode.next=temp.next;
+         temp.next.prev=newNode;
+         temp.next=newNode;
+         newNode.prev=temp;
+          
+
+    }
+}
+
+public static void insertPosEnd(int data,int position){
+         Node newNode=new Node(data);
+         newNode.data=data;
+         newNode.next=null;
+         newNode.prev=null;
+
+         if(head==null){
+            head=newNode;
+            tail=newNode;
+         }
+         else{
+            Node temp=tail;
+            for(int i=0;i<position-2;i++){
+                temp=temp.prev;
+            }
+            newNode.prev=temp.prev;
+            temp.prev.next=newNode;
+            newNode.next=temp;
+            temp.prev=newNode;
 
 
+         }
+
+
+
+
+}
 
 
 
@@ -58,6 +108,10 @@ insertBeg(87);
 insertEnd(34);
 insertEnd(21);
 insertEnd(11);
+insertposfront(2,22);
+insertposfront(5,11);
+insertPosEnd(56,4);
+insertPosEnd(90,3);
 
 
 Node temp=head;
