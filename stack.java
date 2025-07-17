@@ -1,30 +1,32 @@
-/*
+/*by importing stack class can easily build stack - java.util.stack
  * operations of stacks are (first in last out)
-* push()
+* push()-
   pop()
   peek()
-  isEmpty()
+  empty()
   size()
  */
-public class stack {
-     int capacity;
-     int top;
-     char[] stack;
+import java.util.Stack;
+public class stack{
+   public static void main(String[]args){
+      Stack<String> name=new Stack<String>();
 
-     public stack(int capacity){
-      this.capacity=capacity;
-      this.top=-1;
-      this.stack=new char[capacity]; 
+      name.push("sadu");
+      name.push("nimali");
+      name.push("sadali");
 
-     }
-  public static void push(char data){
-    if(top==capacity-1){
-      system.out.println("stack is already full");
+    System.out.println("poped element: "+name.pop());
 
-    }
-    stack[top++]=data;
+    System.out.println("top element:"+name.peek());
 
-  }
+    System.out.println("is empty: "+name.empty());
+
+    System.out.println("now stack:"+name);
+
+
+
+   }
+}
 
 
 
@@ -33,9 +35,5 @@ public class stack {
 
      
     
-  public static void main(String[]args){
-          
-  }
-
-}
+  
 
